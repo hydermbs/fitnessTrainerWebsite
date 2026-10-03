@@ -4,5 +4,5 @@ import { siteContent } from '../config/siteContent'
 
 export function CoachingPage() {
   usePageTitle(`${siteContent.pricing.title} — ${siteContent.meta.logoName}`)
-  return <Pricing />
+  return <Pricing as="h1" />
 }

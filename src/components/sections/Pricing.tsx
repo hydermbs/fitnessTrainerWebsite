@@ -30,10 +30,10 @@ function Included({ included }: { included: boolean }) {
   )
 }
 
-export function Pricing() {
+export function Pricing({ as = 'h2' }: { as?: 'h1' | 'h2' }) {
   return (
     <Section id="coaching">
-      <SectionHeading as="h1" badge={pricing.badge} title={pricing.title} subtitle={pricing.subtitle} />
+      <SectionHeading as={as} badge={pricing.badge} title={pricing.title} subtitle={pricing.subtitle} />
 
       <motion.div variants={fadeUp} className="mt-12 grid gap-6 lg:grid-cols-3">
         {pricing.tiers.map((tier) => (

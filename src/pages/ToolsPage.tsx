@@ -1,4 +1,4 @@
-import { FitnessTools } from '../components/sections/FitnessTools'
+import { FitnessTools } from '../components/sections/FitnessTools'       
 import { usePageTitle } from '../hooks/usePageTitle'
 import { siteContent } from '../config/siteContent'
 

@@ -1,6 +1,7 @@
 import { Hero } from '../components/sections/Hero'
+import { VideoShowcase } from '../components/sections/VideoShowcase'
 import { Assessment } from '../components/sections/Assessment'
-import { BmiTool } from '../components/sections/BmiTool'
+import { Pricing } from '../components/sections/Pricing'
 import { usePageTitle } from '../hooks/usePageTitle'
 import { siteContent } from '../config/siteContent'
 
@@ -9,8 +10,9 @@ export function HomePage() {
   return (
     <>
       <Hero />
+      <VideoShowcase />
       <Assessment />
-      <BmiTool />
+      <Pricing />
     </>
   )
 }

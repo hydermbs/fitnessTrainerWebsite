@@ -109,7 +109,7 @@ export function Assessment() {
   const progress = Math.min(stepIndex, STEP_COUNT) / STEP_COUNT
 
   return (
-    <Section id="assessment" alt>
+    <Section id="assessment">
       <SectionHeading badge={assessment.badge} title={assessment.title} subtitle={assessment.subtitle} />
 
       <motion.div variants={fadeUp} className="mt-10 rounded-xl border border-border bg-surface-alt p-6 md:p-8">

@@ -151,6 +151,16 @@ export interface FooterContent {
   copyright: string
 }
 
+export interface VideoContent {
+  badge: string
+  title: string
+  subtitle: string
+  poster: ImageContent
+  embedUrl: string
+  playLabel: string
+  durationLabel: string
+}
+
 export interface SegmentOption<T extends string> {
   value: T
   label: string
@@ -178,7 +188,6 @@ export interface ToolsContent {
   activityOptions: ActivityOption[]
   energyUnit: string
   bmi: {
-    badge: string
     title: string
     subtitle: string
     resultLabel: string
@@ -194,6 +203,7 @@ export interface SiteContent {
   nav: NavLink[]
   navCta: CtaLink
   hero: HeroContent
+  video: VideoContent
   assessment: AssessmentContent
   philosophy: PhilosophyContent
   transformations: TransformationsContent
@@ -229,6 +239,20 @@ export const siteContent: SiteContent = {
     },
     sealLabel: 'Certified Trainer',
     floatingProof: { value: 180, suffix: '+', label: 'lives transformed' },
+  },
+  video: {
+    badge: 'Inside the Method',
+    title: 'See How the Coaching Actually Works',
+    subtitle:
+      'A short look at how I build your plan, run weekly check-ins, and adjust it around your real schedule.',
+    poster: {
+      src: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1280&q=80',
+      alt: 'Coach Alex Rivera working through a plan with a client in the gym',
+    },
+    // Placeholder video — swap for Alex's real coaching overview (YouTube/Vimeo /embed/ URL).
+    embedUrl: 'https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ',
+    playLabel: 'Play the coaching overview video',
+    durationLabel: '2:14',
   },
   assessment: {
     badge: '60-Second Assessment',
@@ -466,9 +490,8 @@ export const siteContent: SiteContent = {
     ],
     energyUnit: 'kcal / day',
     bmi: {
-      badge: 'Free Tool',
-      title: 'Check Your BMI in Seconds',
-      subtitle: 'A quick snapshot of where you stand today — no email required.',
+      title: 'BMI Calculator',
+      subtitle: 'Body Mass Index from your height and weight.',
       resultLabel: 'Your BMI',
       categories: {
         underweight: { label: 'Underweight', range: 'Below 18.5' },

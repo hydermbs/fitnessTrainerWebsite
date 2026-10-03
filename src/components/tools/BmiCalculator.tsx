@@ -15,16 +15,20 @@ export function BmiCalculator() {
   const category = bmi !== null ? tools.bmi.categories[classifyBMI(bmi)] : null
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      <div className="rounded-xl border border-border bg-surface p-6">
+    <div className="flex flex-col rounded-xl border border-border bg-surface p-6">
+      <h2 className="font-display text-xl uppercase tracking-wide text-primary">{tools.bmi.title}</h2>
+      <p className="mt-2 text-secondary">{tools.bmi.subtitle}</p>
+      <div className="mt-6">
         <BodyInputs value={body} onChange={setBody} />
       </div>
-      <ToolResult
-        label={tools.bmi.resultLabel}
-        value={bmi !== null ? bmi.toFixed(1) : null}
-        hint={tools.emptyHint}
-        caption={category ? `${category.label} · ${category.range}` : undefined}
-      />
+      <div className="mt-6">
+        <ToolResult
+          label={tools.bmi.resultLabel}
+          value={bmi !== null ? bmi.toFixed(1) : null}
+          hint={tools.emptyHint}
+          caption={category ? `${category.label} · ${category.range}` : undefined}
+        />
+      </div>
     </div>
   )
 }
